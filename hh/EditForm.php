@@ -50,7 +50,7 @@
     <form name="myform" method='post'>
       <h1 style="color:#6D089D; text-align:center;">Edit Gym</h1> <br>
             <ul>
-            
+            <h1 style="color:#6D089D; text-align:center">kayan</h1>
               <label for="gym_name" class='add'>Gym Name:</label><br>
             <input type="text" name='Name' class='add'><br>
             <label for="gym_description"class='add' >Gym description:</label><br>
