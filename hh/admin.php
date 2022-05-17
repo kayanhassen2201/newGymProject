@@ -1,60 +1,11 @@
 
 
 <html lang="en" class="default-theme">
-  <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<?php include "connection.php"; ?>
++<?php include "connection.php"; ?>
     <style>
-      :root {
-
-  --background-gradient: linear-gradient(30deg,  #f6f6fa 30%, #f7f7fa);
-  --gray: #34495e;
-  --darkgray: #a4677a;
-}
-
-select {
-  /* Reset Select */
-  appearance: none;
-  outline: 0;
-  border: 0;
-  box-shadow: none;
-  /* Personalize */
-   flex:1;
-  padding: 0 1em;
-  color: #fff;
-  background-color: var(--darkgray);
-  background-image: none;
-  cursor: pointer;
-}
-/* Remove IE arrow */
-select::-ms-expand {
-  display: none;
-}
-/* Custom Select wrapper */
-.select {
-  position: relative;
-  display: flex;
-  width: 11em;
-  height: 3em;
-  border-radius: .25em;
-  overflow: hidden;
-}
-/* Arrow */
-.select::after {
-  content: '\25BC';
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 1em;
-  transition: .25s all ease;
-  pointer-events: none;
-}
-/* Transition */
-.select:hover::after {
-  color: #867e89;
-}
-
       .checked {
   color: orange;
 }
@@ -218,7 +169,7 @@ select::-ms-expand {
 
 
       <nav class="topnav">
-      <i class="fa fa-sign-out" style="font-size:24px;float:right; " onclick="window.location.href='index.php'"></i>
+      <i class="fa fa-sign-out" style="font-size:24px;float:right; " onclick="window.location.href=''"></i>
 
         <img
       class="logo"
@@ -228,7 +179,7 @@ select::-ms-expand {
 
 
         <div class="links">
-          <a href="admin.php">HOME</a>
+          <a href="home.html">HOME</a>
           <a href="#about">About-US</a>
           <a href="#footer">Contact-Us</a>
         </div>
@@ -296,221 +247,221 @@ select::-ms-expand {
     <main>
       <div class="main">
 
+        <div class="ico-btn" id='plus-btn' onclick=window.location.href="AddForm.php">
+      <span class="ico-btn__plus"></span>
 
-      <div class="ico-btn" id='plus-btn' onclick=window.location.href="AddForm.php">
-    <span class="ico-btn__plus"></span>
-  </div>
-  <br>
-<hr>
+      </div>
+      <br>
 
+
+
+
+        <hr>
         <br>
+        <div id="myBtnContainer">
+<form method="POST">
+  <h2 style="color:#6D089D">Search in Riyadh: </h2> <br>
+          <input class="btn active" type="submit" name="all" value="Show all"/>
+          <input class="btn" type="submit" name="north" value="north"/>
+          <input class="btn" type="submit" name="south" value="shoth"/>
+         <input class="btn" type="submit" name="west" value="west"/>
+         <input class="btn" type="submit" name="east" value="east"/>
+
+        </form>
 
 
 
+            <script>
+              function delete_Gym(gymID){
+            alert('Gym deleted'+gymID);
+            // flag = confirm("Are you sure you want to delete?","");
+            // if (flag == true){
+            // $.get("deleteScript.php",{id:gymID});
+            // }
 
 
+            //   }
+              }
+
+            </script>
 
 </div>
+<br>
+        <hr>
 
-        <br>
-       <hr>
 
 
         <!-- Portfolio Gallery Grid -->
+        <div class="row">
+                <?php
+                        global $db;
+                        $server = 'localhost';
+                        $user = 'root';
+                        $pass = 'root';
+                        $dbname = 'doit';
+                        $db = mysqli_connect($server,$user,$pass,$dbname);
+                        if(!$db) {
+                          exit("connection string failed");
+                        }
+                            $q ='select * from gym_info WHERE loc="north"';
+                        $run = mysqli_query($db, $q);
+                        if(isset($_POST['north'])){
+                        while($rec = mysqli_fetch_array($run)) {
+
+                        echo
+                        '
+                          <div class="column">
+                        <div class="content">
+                        <form method ="get">
+                                    <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
+                                    <p class="table-name">'.$rec["name"].' </p>
+
+                              <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
+                        <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
+
+                                    </form>
+                        </div></div>';}}
+                        ?>
+
+                        <?php
+                        global $db;
+                        $server = 'localhost';
+                        $user = 'root';
+                        $pass = 'root';
+                        $dbname = 'doit';
+                        $db = mysqli_connect($server,$user,$pass,$dbname);
+                        if(!$db) {
+                          exit("connection string failed");
+                        }
+                            $q ='select * from gym_info WHERE loc="south"';
+                        $run = mysqli_query($db, $q);
+                        if(isset($_POST['south'])){
+                        while($rec = mysqli_fetch_array($run)) {
+
+                        echo
+                        '
+                          <div class="column">
+                        <div class="content">
+                        <form method ="get">
+                                    <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
+                                    <p class="table-name">'.$rec["name"].' </p>
+
+                              <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
+                        <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
+
+                                    </form>
+                        </div></div>';}}
+                        ?>
+
+                        <?php
+                        global $db;
+                        $server = 'localhost';
+                        $user = 'root';
+                        $pass = 'root';
+                        $dbname = 'doit';
+                        $db = mysqli_connect($server,$user,$pass,$dbname);
+                        if(!$db) {
+                          exit("connection string failed");
+                        }
+                            $q ='select * from gym_info WHERE loc="west"';
+                        $run = mysqli_query($db, $q);
+                        if(isset($_POST['west'])){
+                        while($rec = mysqli_fetch_array($run)) {
+
+                        echo
+                        '
+                          <div class="column">
+                        <div class="content">
+                        <form method ="get">
+                                    <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
+                                    <p class="table-name">'.$rec["name"].' </p>
+
+                              <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
+                        <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
+
+                                    </form>
+                        </div></div>';}}
+                        ?>
+
+
+                      </div>
+
+       <div class="row">
+                       <?php
+                       global $db;
+                       $server = 'localhost';
+                       $user = 'root';
+                       $pass = 'root';
+                       $dbname = 'doit';
+                       $db = mysqli_connect($server,$user,$pass,$dbname);
+                       if(!$db) {
+                         exit("connection string failed");
+                       }
+                           $q ='select * from gym_info WHERE loc="east"';
+                       $run = mysqli_query($db, $q);
+                       if(isset($_POST['east'])){
+                       while($rec = mysqli_fetch_array($run)) {
+
+                       echo
+                       '
+                         <div class="column">
+                       <div class="content">
+                       <form method ="get">
+                                   <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
+                                   <p class="table-name">'.$rec["name"].' </p>
+
+                             <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
+                       <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
+
+                                   </form>
+                       </div></div>';}}
+                       ?>
+                     </div>
 
         <div class="row">
-            <?php
-            global $db;
-          	$server = 'localhost';
-          	$user = 'root';
-          	$pass = 'root';
-          	$dbname = 'doit';
-          	$db = mysqli_connect($server,$user,$pass,$dbname);
-          	if(!$db) {
-          		exit("connection string failed");
-          	}
-                $q ='select * from gym_info';
-          $run = mysqli_query($db, $q);
+              <?php
+              global $db;
+            	$server = 'localhost';
+            	$user = 'root';
+            	$pass = 'root';
+            	$dbname = 'doit';
+            	$db = mysqli_connect($server,$user,$pass,$dbname);
+            	if(!$db) {
+            		exit("connection string failed");
+            	}
+                  $q ='select * from gym_info';
+            $run = mysqli_query($db, $q);
 
-            while($rec = mysqli_fetch_array($run)) {
+              while($rec = mysqli_fetch_array($run)) {
 
-echo
-'
-  <div class="column">
-<div class="content">
-<form method ="get">
-            <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
-            <p class="table-name">'.$rec["name"].' </p>
-                 <h2> Rating:</h2>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-    <span class="fa fa-star checked"></span>
-  <span class="fa fa-star"></span>
-  <span class="fa fa-star"></span>
-      <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
-      <a href="gym_information_admin.php?id='.$rec['id'].'">veiw details</a><br>
-
-<a href="deleteScript.php?id='.$rec['id'].'"><i class="fa fa-trash-o" style="font-size:36px;float: right;"></i></a>
-<a href="EditForm.php"><i class="fa fa-edit" style="font-size:36px;float: right;"></i></a>
+  echo
+  '
+    <div class="column">
+  <div class="content">
+  <form method ="get">
+              <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
+              <p class="table-name">'.$rec["name"].' </p>
+                   <h2> Rating:</h2>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+        <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
 
 
 
-            </form>
-</div></div>';}
-?>
 
-</div>
-        <?php
-        global $db;
-        $server = 'localhost';
-        $user = 'root';
-        $pass = 'root';
-        $dbname = 'doit';
-        $db = mysqli_connect($server,$user,$pass,$dbname);
-        if(!$db) {
-          exit("connection string failed");
-        }
-            $q ='select * from gym_info WHERE loc="north"';
-        $run = mysqli_query($db, $q);
-        if(isset($_POST['north'])){
-        while($rec = mysqli_fetch_array($run)) {
-
-        echo
-        '
-          <div class="column">
-        <div class="content">
-        <form method ="get">
-                    <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
-                    <p class="table-name">'.$rec["name"].' </p>
-                         <h2> Rating:</h2>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-              <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
-
-              <a href="deleteScript.php?id="'.$rec['id'].'"><i class="fa fa-trash-o" style="font-size:36px;float: right;"></i></a>
-              <i class="fa fa-edit" style="font-size:36px;float: right; "onclick="window.location.href="EditGym.php"></i>
-                    </form>
-        </div></div>';}}
-        ?>
-
-        <?php
-        global $db;
-        $server = 'localhost';
-        $user = 'root';
-        $pass = 'root';
-        $dbname = 'doit';
-        $db = mysqli_connect($server,$user,$pass,$dbname);
-        if(!$db) {
-          exit("connection string failed");
-        }
-            $q ='select * from gym_info WHERE loc="south"';
-        $run = mysqli_query($db, $q);
-        if(isset($_POST['south'])){
-        while($rec = mysqli_fetch_array($run)) {
-
-        echo
-        '
-          <div class="column">
-        <div class="content">
-        <form method ="get">
-                    <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
-                    <p class="table-name">'.$rec["name"].' </p>
-                         <h2> Rating:</h2>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-              <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
-
-              <a href="gym_information.php?id='.$rec['id'].'">
-              <i class="fa fa-trash-o" style="font-size:36px;float: right; " onclick="deleteGym("9round")"></i>
-              <i class="fa fa-edit" style="font-size:36px;float: right; "onclick="window.location.href="9RoundAdmin.php"></i> </a>
-                   </form>
-        </div></div>';}}
-        ?>
-
-        <?php
-        global $db;
-        $server = 'localhost';
-        $user = 'root';
-        $pass = 'root';
-        $dbname = 'doit';
-        $db = mysqli_connect($server,$user,$pass,$dbname);
-        if(!$db) {
-          exit("connection string failed");
-        }
-            $q ='select * from gym_info WHERE loc="west"';
-        $run = mysqli_query($db, $q);
-        if(isset($_POST['west'])){
-        while($rec = mysqli_fetch_array($run)) {
-
-        echo
-        '
-          <div class="column">
-        <div class="content">
-        <form method ="get">
-                    <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
-                    <p class="table-name">'.$rec["name"].' </p>
-                         <h2> Rating:</h2>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-              <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
+  <a href="deleteScript.php?id='.$rec['id'].'" target="_blank"><i class="fa fa-trash-o" style="font-size:36px;float: right;"></i></a>
+  <a href="EditForm.php"><i class="fa fa-edit" style="font-size:36px;float: right;"></i></a>
 
 
-<a href="gym_information.php?id='.$rec['id'].'">
-<i class="fa fa-trash-o" style="font-size:36px;float: right; " onclick="deleteGym("9round")"></i>
-<i class="fa fa-edit" style="font-size:36px;float: right; "onclick="window.location.href="9RoundAdmin.php"></i> </a>
-     </form>
-        </div></div>';}}
-        ?>
 
+              </form>
+  </div></div>';}
+  ?>
 
-        <?php
-        global $db;
-        $server = 'localhost';
-        $user = 'root';
-        $pass = 'root';
-        $dbname = 'doit';
-        $db = mysqli_connect($server,$user,$pass,$dbname);
-        if(!$db) {
-          exit("connection string failed");
-        }
-            $q ='select * from gym_info WHERE loc="east"';
-        $run = mysqli_query($db, $q);
-        if(isset($_POST['east'])){
-        while($rec = mysqli_fetch_array($run)) {
-
-        echo
-        '
-          <div class="column">
-        <div class="content">
-        <form method ="get">
-                    <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
-                    <p class="table-name">'.$rec["name"].' </p>
-                         <h2> Rating:</h2>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-              <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
-
-
-<a href="gym_information.php?id='.$rec['id'].'">
-<i class="fa fa-trash-o" style="font-size:36px;float: right; " onclick="deleteGym("9round")"></i>
-<i class="fa fa-edit" style="font-size:36px;float: right; "onclick="window.location.href="9RoundAdmin.php"></i> </a>
- </form>
-        </div></div>';}}
-        ?>
-
-
+  </div>
         <!-- END GRID -->
         </div>
 
