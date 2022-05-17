@@ -4,7 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  
+
   font-size: 16px;
   text-decoration: none;
 }
@@ -48,19 +48,19 @@ html {
 
 img {
   width: 100%;
-  
+
   padding: 10px;
   background-color: var(--bg-color-4);
 }
 
 body {
   background: url("images/back7.jpg");
-  
+
 }
 
 main {
   padding: 20px;
-  
+
 }
 
 .heading-s {
@@ -74,11 +74,11 @@ main {
   font-size: 4rem;
   color: #8c8f84;
 }
-.pre_h pre { 
+.pre_h pre {
   font-size: 1.2rem;
-  color: var(--bg-color-3); 
+  color: var(--bg-color-3);
 }
-  
+
 
 header {
   display: flex;
@@ -96,7 +96,7 @@ header img {
 
 nav {
   display: flex;
-  
+
   font-size: 1em;
   flex-wrap: wrap;
   width: 100%;
@@ -104,7 +104,7 @@ nav {
 
 nav.topnav {
   overflow: hidden;
-  
+
 }
 
 nav .links {
@@ -113,13 +113,13 @@ nav .links {
   font-weight: bold;
   text-transform: uppercase;
   flex-wrap: wrap;
-  
+
 }
 
 nav.topnav a {
   color: #9345B8;
   padding: 14px 16px;
-  
+
 }
 
 nav.topnav a:hover {
@@ -161,7 +161,7 @@ footer{
   width: 100vw;
   padding-top: 40px;
   color: #fff;
-  
+
 }
 .footer-content{
   display: flex;
@@ -303,7 +303,7 @@ button {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
   gap: 1.5rem;
-  
+
 }
 
 .res-pic .box-container1 .table-picture {
@@ -357,11 +357,11 @@ h1 {
   float: left;
   width: 45%;
   display: none; /* Hide all elements by default */
-  
+
 
 }
 
-/* Clear floats after rows */ 
+/* Clear floats after rows */
 .row:after {
   content: "";
   display: table;
@@ -370,7 +370,7 @@ h1 {
 
 /* Content */
 .content {
-  
+
   padding: 10px;
   padding: 2.5rem;
   background: #d9d9d9;
@@ -445,19 +445,18 @@ button.BOOK:hover {
   background-color: #c4c2c2;
   color: #ffffff;
 }
-button.sort{
-  
+button.sort,a.sort{
+
   padding: 12px 16px;
-  margin-left: 510px;
   cursor: pointer;
   border: 1px solid #000;
-  background-color: #672E82;
-  color: #ffffff;
+  background-color: #e39ad9;
+  color: #e39ad9;
 
 }
 button.sort:hover {
   border: 1px solid #000;
-  background-color: #c4c2c2;
+  background-color:#e39ad9 ;
   color: #ffffff;
 }
 
@@ -508,5 +507,5 @@ button.BOOK[disabled] {
   .ourstory .row .col {
     width: 100%;
   }
-  
+
 }
