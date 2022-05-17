@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: May 17, 2022 at 08:29 PM
--- Server version: 5.7.24
--- PHP Version: 8.0.1
+-- Host: localhost:8889
+-- Generation Time: May 16, 2022 at 12:21 PM
+-- Server version: 5.7.34
+-- PHP Version: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `doit`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `adminID` int(2) NOT NULL,
+  `Fname` varchar(150) NOT NULL,
+  `Lname` varchar(150) NOT NULL,
+  `password` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -46,7 +59,8 @@ INSERT INTO `gym_info` (`id`, `name`, `description`, `subscribe`, `photo`, `loca
 (2, 'Vida fit', '      Vidafit is an exclusive female fitness Center expanding throughout the kingdom. Vidafit provides its members with an array of healthy fitness with a safe environment at competitive prices. Vidafit takes pride in giving all its members an opportunity to achieve their individual goals, from general to a high-level competitive fitness.\r\n\r\n                        <br />\r\n                        Vidafit’s objective is to give the community access to a club where all its members can avail the best in class equipment facilities which are unique in their own sphere. Members at Vidafit can achieve their fitness aspirations with fun and determination.\r\n\r\n                        </br> call us: 011 834 3007', 'https://vidafit.com.au', 'images/vidafitlogo.png', 'https://maps.google.com/maps?q=Vidafit%20%7C%20Alwan%20Center&t=&z=13&ie=UTF8&iwloc=&output=embed', 'north'),
 (3, '9Round', 'At typical gyms, your workout relies on a class time or your trainer’s schedule. We think it\'s about time that changed. We provide members with fun,\r\n                        trainer-guided, kickboxing-style workouts in a circuit format. That means our workouts begin whenever you show up.\r\n                        Because it’s all about YOU. Getting stronger. On YOUR time.\r\n                        </br> call us: 9200 19910', 'https://sa.9round.com', 'images/9round.png', 'https://maps.google.com/maps?q=9round&t=&z=13&ie=UTF8&iwloc=&output=embed', 'west'),
 (4, 'Diva', 'professional laides gym in riyadh </br> call us: 0554960222', 'https://www.diva.sa', 'images/diva.png', 'https://www.google.com/maps?q=Diva+Fitness+AlMughrizat&ftid=0x3e2f0271c8377f71:0x6c8f0f4ef05b2767&t=&z=13&ie=UTF8&iwloc=&output=embed', 'north'),
-(5, 'FitForever', 'In FIT FOREVER FITNESS, we combine the highest standards of physical fitness training with the highest attention to the smallest details, offering you a luxurious experience and uncompromising quality that keeps you motivated.\r\n\r\n                        Our passion is all about enriching the lives of our members and creating a classy community of like-minded people who love being healthy, strong and happy.\r\n                        </br> call us: 011 488 1069', 'https://www.fitforeverfitness.com', 'images/fitfor.png', 'https://maps.google.com/maps?q=FIT%20FOREVER%20FITNESS&t=&z=13&ie=UTF8&iwloc=&output=embed', 'east');
+(5, 'FitForever', 'In FIT FOREVER FITNESS, we combine the highest standards of physical fitness training with the highest attention to the smallest details, offering you a luxurious experience and uncompromising quality that keeps you motivated.\r\n\r\n                        Our passion is all about enriching the lives of our members and creating a classy community of like-minded people who love being healthy, strong and happy.\r\n                        </br> call us: 011 488 1069', 'https://www.fitforeverfitness.com', 'images/fitfor.png', 'https://maps.google.com/maps?q=FIT%20FOREVER%20FITNESS&t=&z=13&ie=UTF8&iwloc=&output=embed', 'east'),
+(6, 'AL-manahil', '  Al Manahil Entertainment Co. is one of the leading company in Beauty, Fitness and Sports sectors in Riyadh. Our aim is to offer best services to all women located at one place.\r\n                        <br />\r\n                        Al Manahil Entertainment Co. is a NON-PROFIT company outlined with its distinct support of Princess Madawi Fund for Women Entrepreneurship Development \"Deem Al Manahil\".\r\n\r\n                        </br> call us: 011 488 1069', 'https://www.almanahil.com.sa', 'images/manahil.jpg', 'https://maps.google.com/maps?q=%D9%85%D8%B1%D9%83%D8%B2%20%D8%A7%D9%84%D9%85%D9%86%D8%A7%D9%87%D9%84&t=&z=13&ie=UTF8&iwloc=&output=embed', 'west');
 
 -- --------------------------------------------------------
 
@@ -77,8 +91,7 @@ INSERT INTO `rev` (`review_id`, `user_name`, `user_rating`, `user_review`, `date
 (10, 'maha', 2, 'nice', '2022-05-14 21:37:06', 3),
 (11, 'nada', 3, 'good', '2022-05-14 21:37:43', 3),
 (12, 'wareef', 3, 'I like it', '2022-05-14 21:38:52', 4),
-(13, 'felwa', 1, 'Dislike', '2022-05-14 21:40:08', 4),
-(14, 'f', 5, 'liiike', '2022-05-15 20:25:42', 5);
+(13, 'felwa', 1, 'Dislike', '2022-05-14 21:40:08', 4);
 
 --
 -- Indexes for dumped tables
@@ -105,13 +118,13 @@ ALTER TABLE `rev`
 -- AUTO_INCREMENT for table `gym_info`
 --
 ALTER TABLE `gym_info`
-  MODIFY `id` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `rev`
 --
 ALTER TABLE `rev`
-  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `review_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Constraints for dumped tables
