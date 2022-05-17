@@ -206,7 +206,7 @@
         <div id="myBtnContainer">
 <form method="POST">
   <h2 style="color:#6D089D">Search in Riyadh: </h2> <br>
-          <input class="btn active" type="submit" name="all" value="Show all"/>
+          <input class="btn " type="submit" name="all" value="Show all"/>
           <input class="btn" type="submit" name="north" value="north"/>
           <input class="btn" type="submit" name="south" value="shoth"/>
          <input class="btn" type="submit" name="west" value="west"/>
@@ -375,7 +375,7 @@ echo
         <form method ="get">
                     <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
                     <p class="table-name">'.$rec["name"].' </p>
-                         ';
+                      <br>   ';
              $gym_id = $rec['id'];
                     $query1 = "SELECT Avg(user_rating) as sum1 FROM rev WHERE gym_id=$gym_id group by gym_id";
 
@@ -395,46 +395,12 @@ echo
 
 
 
-        <?php
 
-
-                    if($avg == 0) {
-                        echo '<i class="fa fa-star"></i><span class="fa fa-star "></span>
-            <span class="fa fa-star "></span>
-            <span class="fa fa-star "></span>
-          <span class="fa fa-star"></span>';
-                    } elseif($avg == 1) {
-                        echo '<i class="fa fa-star checked"></i><span class="fa fa-star "></span>
-            <span class="fa fa-star "></span>
-            <span class="fa fa-star "></span>
-          <span class="fa fa-star"></span>';
-                    } else if( $avg == 2) {
-                        echo '<i class="fa fa-star checked"></i><span class="fa fa-star checked"></span>
-            <span class="fa fa-star "></span>
-            <span class="fa fa-star "></span>
-          <span class="fa fa-star"></span>';
-                    }else if( $avg == 3) {
-                        echo '<i class="fa fa-star checked"></i><span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star "></span>
-          <span class="fa fa-star"></span>';
-                    }else if( $avg == 4) {
-                        echo '<i class="fa fa-star checked"></i><span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>';
-                    }else if( $avg == 5) {
-                         echo '<i class="fa fa-star checked"></i><span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>';
-                    }
-
-                  ?>
 
     <?php
 
             echo '
+            <br>
               <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
         <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
 
