@@ -176,7 +176,7 @@
 
 
       <nav class="topnav">
-      <i class="fa fa-sign-out" style="font-size:24px;float:right; " onclick="window.location.href=''"></i>
+      <i class="fa fa-sign-out" style="font-size:24px;float:right; " onclick="window.location.href='index.php'"></i>
 
         <img
       class="logo"
@@ -186,7 +186,7 @@
 
 
         <div class="links">
-          <a href="home.html">HOME</a>
+          <a href="admin.php">HOME</a>
           <a href="#about">About-US</a>
           <a href="#footer">Contact-Us</a>
         </div>
@@ -270,7 +270,7 @@
   <h2 style="color:#6D089D">Search in Riyadh: </h2> <br>
           <input class="btn active" type="submit" name="all" value="Show all"/>
           <input class="btn" type="submit" name="north" value="north"/>
-          <input class="btn" type="submit" name="south" value="shoth"/>
+          <input class="btn" type="submit" name="south" value="south"/>
          <input class="btn" type="submit" name="west" value="west"/>
          <input class="btn" type="submit" name="east" value="east"/>
 
@@ -305,17 +305,30 @@
 
                         echo
                         '
-                          <div class="column">
-                        <div class="content">
-                        <form method ="get">
-                                    <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
-                                    <p class="table-name">'.$rec["name"].' </p>
+                       <div class="column">
+                     <div class="content">
+                     <form method ="get">
+                                 <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
+                                 <p class="table-name">'.$rec["name"].' </p>
+                                      <h2> Rating:</h2>
+                         <span class="fa fa-star checked"></span>
+                         <span class="fa fa-star checked"></span>
+                         <span class="fa fa-star checked"></span>
+                       <span class="fa fa-star"></span>
+                       <span class="fa fa-star"></span>
+                           <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
+                           <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
 
-                              <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
-                        <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
-
-                                    </form>
-                        </div></div>';}}
+                   
+                   
+                   
+                     <a href="deleteScript.php?id='.$rec['id'].'" target="_blank"><i class="fa fa-trash-o" style="font-size:36px;float: right;"></i></a>
+                     <a href="EditForm.php?id='.$rec['id'].'" target="_blank""><i class="fa fa-edit" style="font-size:36px;float: right;"></i></a>
+                   
+                   
+                   
+                                 </form>
+                     </div></div>';}}
                         ?>
 
                         <?php
@@ -335,17 +348,30 @@
 
                         echo
                         '
-                          <div class="column">
-                        <div class="content">
-                        <form method ="get">
-                                    <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
-                                    <p class="table-name">'.$rec["name"].' </p>
+                        <div class="column">
+                      <div class="content">
+                      <form method ="get">
+                                  <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
+                                  <p class="table-name">'.$rec["name"].' </p>
+                                       <h2> Rating:</h2>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                            <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
+                            <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
 
-                              <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
-                        <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
-
-                                    </form>
-                        </div></div>';}}
+                    
+                    
+                    
+                      <a href="deleteScript.php?id='.$rec['id'].'" target="_blank"><i class="fa fa-trash-o" style="font-size:36px;float: right;"></i></a>
+                      <a href="EditForm.php?id='.$rec['id'].'" target="_blank""><i class="fa fa-edit" style="font-size:36px;float: right;"></i></a>
+                    
+                    
+                    
+                                  </form>
+                      </div></div>';}}
                         ?>
 
                         <?php
@@ -364,18 +390,31 @@
                         while($rec = mysqli_fetch_array($run)) {
 
                         echo
-                        '
-                          <div class="column">
-                        <div class="content">
-                        <form method ="get">
-                                    <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
-                                    <p class="table-name">'.$rec["name"].' </p>
+                      '
+    <div class="column">
+  <div class="content">
+  <form method ="get">
+              <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
+              <p class="table-name">'.$rec["name"].' </p>
+                   <h2> Rating:</h2>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+    <span class="fa fa-star"></span>
+    <span class="fa fa-star"></span>
+        <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
+        <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
 
-                              <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
-                        <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
 
-                                    </form>
-                        </div></div>';}}
+
+
+  <a href="deleteScript.php?id='.$rec['id'].'" target="_blank"><i class="fa fa-trash-o" style="font-size:36px;float: right;"></i></a>
+  <a href="EditForm.php?id='.$rec['id'].'" target="_blank""><i class="fa fa-edit" style="font-size:36px;float: right;"></i></a>
+
+
+
+              </form>
+  </div></div>';}}
                         ?>
 
 
@@ -399,17 +438,30 @@
 
                        echo
                        '
-                         <div class="column">
-                       <div class="content">
-                       <form method ="get">
-                                   <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
-                                   <p class="table-name">'.$rec["name"].' </p>
+                       <div class="column">
+                     <div class="content">
+                     <form method ="get">
+                                 <img src='.$rec["photo"].' alt="" style="width:100%"><hr>
+                                 <p class="table-name">'.$rec["name"].' </p>
+                                      <h2> Rating:</h2>
+                         <span class="fa fa-star checked"></span>
+                         <span class="fa fa-star checked"></span>
+                         <span class="fa fa-star checked"></span>
+                       <span class="fa fa-star"></span>
+                       <span class="fa fa-star"></span>
+                           <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
+                           <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
 
-                             <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
-                       <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
-
-                                   </form>
-                       </div></div>';}}
+                   
+                   
+                   
+                     <a href="deleteScript.php?id='.$rec['id'].'" target="_blank"><i class="fa fa-trash-o" style="font-size:36px;float: right;"></i></a>
+                     <a href="EditForm.php?id='.$rec['id'].'" target="_blank""><i class="fa fa-edit" style="font-size:36px;float: right;"></i></a>
+                   
+                   
+                   
+                                 </form>
+                     </div></div>';}}
                        ?>
                      </div>
 
@@ -443,12 +495,13 @@
     <span class="fa fa-star"></span>
     <span class="fa fa-star"></span>
         <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
+        <a href="gym_information.php?id='.$rec['id'].'">veiw details</a><br>
 
 
 
 
   <a href="deleteScript.php?id='.$rec['id'].'" target="_blank"><i class="fa fa-trash-o" style="font-size:36px;float: right;"></i></a>
-  <a href="EditForm.php"><i class="fa fa-edit" style="font-size:36px;float: right;"></i></a>
+  <a href="EditForm.php?id='.$rec['id'].'" target="_blank""><i class="fa fa-edit" style="font-size:36px;float: right;"></i></a>
 
 
 
