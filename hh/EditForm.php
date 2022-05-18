@@ -1,7 +1,6 @@
 <?php
             include("connection.php");
-            if (isset($_POST['submitAddition'])) {
-              if(strlen($_POST['submitAddition'])>0){
+            if (isset($_POST['submitAddition'])){
                 $name=$_POST['Name'];
                 $des=$_POST['description'];
                 $sub=$_POST['URL'];
@@ -17,12 +16,12 @@
                     echo '<p id="ok" style="background:red;">Failed</p>';
                 }
                       }
-}
+
 			?>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Add Gym</title>
+<title>Edit Gym</title>
 <link href="style1.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -51,11 +50,11 @@
     <form name="myform" method='post'>
       <h1 style="color:#6D089D; text-align:center;">Edit Gym</h1> <br>
             <ul>
-
+            <h1 style="color:#6D089D; text-align:center">kayan</h1>
               <label for="gym_name" class='add'>Gym Name:</label><br>
             <input type="text" name='Name' class='add'><br>
             <label for="gym_description"class='add' >Gym description:</label><br>
-            <textarea name='description' placeholder="Enter gym description here ....." class='add' ></textarea><br> <!--hieeght and width-->
+            <textarea name='description' placeholder="Enter gym description here ....." class='add' required rows="7"></textarea><br> <!--hieeght and width-->
             <label for="subscribe_URL" class='add'>Subscription URL:</label><br>
             <input type="text" name='URL' class='add'><br>
             <label for="logo" class='add'>Upload gym's logo:</label><br>

@@ -102,7 +102,7 @@
                   $flag1 = NULL;
                 } else {
                   $file1 = $_FILES['logo']['name'];
-                  $target1 = $main . "-" .  $file1;
+                  $target1 = $main .  $file1;
                   $flag1 = move_uploaded_file($_FILES["logo"]["tmp_name"], $target1);
                  }
 
