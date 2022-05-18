@@ -278,7 +278,7 @@
 
 
 
-           
+
 
 </div>
 <br>
@@ -319,14 +319,14 @@
                            <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
                            <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
 
-                   
-                   
-                   
+
+
+
                      <a href="deleteScript.php?id='.$rec['id'].'" target="_blank"><i class="fa fa-trash-o" style="font-size:36px;float: right;"></i></a>
                      <a href="EditForm.php?id='.$rec['id'].'" target="_blank""><i class="fa fa-edit" style="font-size:36px;float: right;"></i></a>
-                   
-                   
-                   
+
+
+
                                  </form>
                      </div></div>';}}
                         ?>
@@ -362,14 +362,14 @@
                             <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
                             <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
 
-                    
-                    
-                    
+
+
+
                       <a href="deleteScript.php?id='.$rec['id'].'" target="_blank"><i class="fa fa-trash-o" style="font-size:36px;float: right;"></i></a>
                       <a href="EditForm.php?id='.$rec['id'].'" target="_blank""><i class="fa fa-edit" style="font-size:36px;float: right;"></i></a>
-                    
-                    
-                    
+
+
+
                                   </form>
                       </div></div>';}}
                         ?>
@@ -452,14 +452,14 @@
                            <p class="table-loc">LOCATION: "'.$rec["loc"].'"</p><br>
                            <a href="gym_information.php?id='.$rec['id'].'">veiw details</a>
 
-                   
-                   
-                   
+
+
+
                      <a href="deleteScript.php?id='.$rec['id'].'" target="_blank"><i class="fa fa-trash-o" style="font-size:36px;float: right;"></i></a>
                      <a href="EditForm.php?id='.$rec['id'].'" target="_blank""><i class="fa fa-edit" style="font-size:36px;float: right;"></i></a>
-                   
-                   
-                   
+
+
+
                                  </form>
                      </div></div>';}}
                        ?>
@@ -600,7 +600,7 @@
             <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
          </ul>
          <div class="footer-bottom">
-          <button style="color: black;" onclick="window.location.href='signuplogin.html'">admin</button>
+          <button style="color: black;" onclick="window.location.href='signuplogin.php'">admin</button>
           <p>copyright &copy;2022 <a href="#">DO IT</a>  </p>
 
        </div>
