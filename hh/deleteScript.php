@@ -24,8 +24,8 @@
     window.location.href = 'admin.php'; 
     </script>";}
   else{
-         echo "<script>alert('delete from gym is failed');</script>";  
-    // echo "Error deleting record: " . $conn->error;
+         echo "<script>alert('Error deleting record: . $conn->error');</script>";  
+    // echo ;
   }
   
   $conn->close();

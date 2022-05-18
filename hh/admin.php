@@ -6,6 +6,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 +<?php include "connection.php"; ?>
     <style>
+           :root {
+
+  --background-gradient: linear-gradient(30deg,  #f6f6fa 30%, #f7f7fa);
+  --gray: #34495e;
+  --darkgray: #a4677a;
+}
+
       .checked {
   color: orange;
 }
@@ -247,7 +254,7 @@
     <main>
       <div class="main">
 
-        <div class="ico-btn" id='plus-btn' onclick=window.location.href="AddForm.php">
+        <div class="ico-btn" id='plus-btn' onclick='window.open("AddForm.php")' >
       <span class="ico-btn__plus"></span>
 
       </div>
@@ -271,19 +278,7 @@
 
 
 
-            <script>
-              function delete_Gym(gymID){
-            alert('Gym deleted'+gymID);
-            // flag = confirm("Are you sure you want to delete?","");
-            // if (flag == true){
-            // $.get("deleteScript.php",{id:gymID});
-            // }
-
-
-            //   }
-              }
-
-            </script>
+           
 
 </div>
 <br>
