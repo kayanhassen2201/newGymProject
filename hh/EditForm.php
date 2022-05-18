@@ -1,6 +1,7 @@
 <?php
             include("connection.php");
-            if (isset($_POST['submitAddition'])){
+            if (isset($_POST['submitAddition'])) {
+              if(strlen($_POST['submitAddition'])>0){
                 $name=$_POST['Name'];
                 $des=$_POST['description'];
                 $sub=$_POST['URL'];
@@ -10,13 +11,13 @@
                  $id1=$_GET["id"];
                 $query=$sql = "UPDATE gym_info SET name='$name' , description='$des' , subscribe='$sub', photo='$logo' , location='$locurl' ,loc='  $loc' WHERE id='$id1'";
                 if ($p=mysqli_query($db,$query)){
-                    echo  '<p id="ok">It has been successfully modified</p>';
+                    echo  '<p id="ok">It has been successfully modifiedy</p>';
                 }
                 else {
                     echo '<p id="ok" style="background:red;">Failed</p>';
                 }
                       }
-
+}
 			?>
 <html>
 <head>
@@ -50,10 +51,11 @@
     <form name="myform" method='post'>
       <h1 style="color:#6D089D; text-align:center;">Edit Gym</h1> <br>
             <ul>
+
               <label for="gym_name" class='add'>Gym Name:</label><br>
             <input type="text" name='Name' class='add'><br>
             <label for="gym_description"class='add' >Gym description:</label><br>
-            <textarea name='description' placeholder="Enter gym description here ....." class='add' required rows="7"></textarea><br> <!--hieeght and width-->
+            <textarea name='description' placeholder="Enter gym description here ....." class='add' ></textarea><br> <!--hieeght and width-->
             <label for="subscribe_URL" class='add'>Subscription URL:</label><br>
             <input type="text" name='URL' class='add'><br>
             <label for="logo" class='add'>Upload gym's logo:</label><br>
