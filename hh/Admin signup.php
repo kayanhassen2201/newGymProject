@@ -8,7 +8,7 @@
 <table id="content" cellpadding="10">
 <tr style="border-radius: 20px;">
 	<td valign="middle" colspan="2" style="height: 70px;background: #C4C2C2">
-	
+
 	</td>
 </tr>
 <tr>
@@ -58,7 +58,45 @@
 	 return( true );
   }
 </script>
-<form action="Admin Log-in.html"  name = "myForm" onsubmit = "return(validate());">
+
+<?php
+include("connection.php");
+if(isset($_POST['signUpsubmit'])) {
+
+	$firstname = $_POST['firstname'];
+	$lastname = $_POST['lastname'];
+	$adminID = $_POST['UserID'];
+	$password = password_hash($_POST['Password'], PASSWORD_DEFAULT);
+
+	$q1 = "SELECT * FROM admin WHERE adminID='$adminID'";
+	$run = mysqli_query($db, $q1);
+	$no1 = mysqli_num_rows($run);
+	if($no1 ==1) {
+		echo '<p style="color:red;" id="not">This admin is found into system</p>';
+			echo '<META HTTP-EQUIV="Refresh" Content="4; URL=Admin signup.php">';
+	} else {
+		$q2 = "INSERT INTO admin VALUES('$adminID','$firstname', '$lastname',  '$password')";
+		$run2 = mysqli_query($db, $q2);
+    if(!$run2) echo mysqli_error($db);
+		if($run2) {
+			$_SESSION['firstname'] = $firstname;
+			$_SESSION['lastname'] = $lastname;
+			$_SESSION['adminID'] = $adminID;
+
+
+			echo '<p id="ok">Creating Account Successfully</p>';
+			echo '<META HTTP-EQUIV="Refresh" Content="2; URL=admin.php">';
+		}
+	}
+
+
+}
+?>
+
+
+
+
+<form action="Admin signup.php"  method="post" name = "myForm" onsubmit = "return(validate());">
 <tr>
 	<td align="right">
 		User ID
@@ -94,7 +132,7 @@
 </tr>
 <tr>
 	<td colspan="2" align="right">
-		<input type = "submit" value = "Sign Up" id="UserButton"  />
+		<input type = "submit" value = "Sign Up" id="UserButton" name='signUpsubmit'  />
 </td>
 	</tr>
 </form>
