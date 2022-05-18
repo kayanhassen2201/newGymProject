@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -9,7 +10,7 @@
 <table id="content" cellpadding="10">
 <tr style="border-radius: 20px;">
 	<td valign="middle" colspan="2" style="height: 70px;background: #C4C2C2">
-	
+
 	</td>
 </tr>
 <tr>
@@ -23,7 +24,7 @@
 </tr>
 	<script type = "text/javascript">
       function validate() {
-      
+
          if( document.myForm.UserID.value == "" ) {
             alert( "Please provide User ID!" );
             document.myForm.UserID.focus() ;
@@ -40,12 +41,43 @@
 			   document.myForm.Password.focus() ;
 			   return false;
 		  }
-		 
+
          return( true );
       }
    //-->
 </script>
-<form action="Admin.html"  name = "myForm" onsubmit = "return(validate());">
+
+<?php
+include("connection.php");
+if(isset($_POST['loginsubmit'])) {
+	$adminID = $_POST['UserID'];
+	$password = $_POST['Password'];
+	 $q = "SELECT * FROM admin WHERE adminID='$adminID' ";
+
+	$run = mysqli_query($db, $q);
+	$no = mysqli_num_rows($run);
+
+	if($no ==1) {
+		$rec = mysqli_fetch_array($run);
+		if(password_verify($password, $rec["password"]) && !empty($rec["password"])){
+			$_SESSION['adminID'] =  $rec['adminID'];
+			$_SESSION['firstname'] = $rec['Fname'];
+			$_SESSION['lastname'] = $rec['Lname'];
+
+
+			echo '<META HTTP-EQUIV="Refresh" Content="1; URL=admin.php">';
+			exit();
+		} else {
+			echo '<p  style="color:red;"id="not">password is not correct</p>';
+		}
+	} else {
+		echo '<p  style="color:red;" id="not">username is not correct</p>';
+	}
+}
+?>
+
+
+<form action="" method="POST" name = "myForm" onsubmit = "return(validate());">
 <tr>
 <td colspan="2" align="center">
 	<h2>Admin Log-In</h2>
@@ -70,14 +102,14 @@
 </tr>
 <tr>
 	<td colspan="2" align="right">
-		<input type = "submit" value = "Log-In" id="UserButton"  />
+		<input type = "submit" value = "Log-In" id="UserButton" name="loginsubmit" />
 </td>
 	</tr>
 </form>
-	
+
 
 </table>
 
- 
+
 </body>
 </html>

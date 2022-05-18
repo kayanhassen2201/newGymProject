@@ -501,7 +501,7 @@ echo
             <li><a href="#"><i class="fa fa-linkedin-square"></i></a></li>
          </ul>
          <div class="footer-bottom">
-          <button style="color: black;" onclick="window.location.href='signuplogin.html'">admin</button>
+          <button style="color: black;" onclick="window.location.href='signuplogin.php'">admin</button>
           <p>copyright &copy;2022 <a href="#">DO IT</a>  </p>
 
        </div>
